@@ -68,15 +68,43 @@ public class QlyLoaiHoa extends javax.swing.JFrame {
         if (txtsoluong.getText().isEmpty()) {
             JOptionPane.showMessageDialog(this, "Số lượng không được để trống");
             return false;
+        } else {
+            try {
+                if (txtsoluong.getText() == "" || txtsoluong.getText().length() != 3) {
+                    JOptionPane.showMessageDialog(this, "số lượng Phải là 1 số");
+                    return false;
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Số Lượng Phải là số");
+            }
         }
         if (txtgiaban.getText().isEmpty()) {
             JOptionPane.showMessageDialog(this, "Giá bán không được để trống");
             return false;
+        } else {
+            try {
+                if (txtgiaban.getText() == "" || txtgiaban.getText().length() != 3) {
+                    JOptionPane.showMessageDialog(this, "Giá Bán Phải là 1 số");
+                    return false;
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Giá Bán Phải là số");
+            }
         }
         if (txtgianhap.getText().isEmpty()) {
             JOptionPane.showMessageDialog(this, "Giá Nhập không được để trống");
             return false;
+        } else {
+            try {
+                if (txtgianhap.getText() == "" || txtgianhap.getText().length() != 3) {
+                    JOptionPane.showMessageDialog(this, "Giá Nhập Phải là 1 số");
+                    return false;
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Giá Nhập Phải là số");
+            }
         }
+
         return true;
     }
 

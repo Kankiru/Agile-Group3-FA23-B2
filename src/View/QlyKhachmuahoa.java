@@ -395,7 +395,6 @@ public class QlyKhachmuahoa extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Không Thành Công");
             }
         }
-
     }//GEN-LAST:event_btnaddActionPerformed
 
     private void btndelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndelActionPerformed
