@@ -56,4 +56,18 @@ public class Userservice {
         }
         return (row > 0);
     }
+
+    public int insertuser(User u) {
+        sql = "insert into login(username,password) values (?,?)";
+        try {
+            con = DBConnect.getConnection();
+            ps = con.prepareStatement(sql);
+            ps.setObject(1, u.getUsername());
+            ps.setObject(2, u.getPassword());
+            return ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
 }
