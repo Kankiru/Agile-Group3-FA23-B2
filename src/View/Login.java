@@ -160,19 +160,21 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
         String user = txtusername.getText();
         String pass = txtpassword.getText();
-        if (Userservice.checkLogin(user, pass)) {
-            JOptionPane.showMessageDialog(this, "Đăng Nhập thành công");
-            Tinhnang ql = new Tinhnang();
-            ql.setVisible(true);
-        } 
-        else JOptionPane.showMessageDialog(this, "Đăng Nhập thất bại");
-    
+        if (this.checkuser()) {
+            if (Userservice.checkLogin(user, pass)) {
+                JOptionPane.showMessageDialog(this, "Đăng Nhập thành công");
+                Tinhnang ql = new Tinhnang();
+                ql.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(this, "Đăng Nhập thất bại do sai tài khoản hoặc mật khẩu");
+            }
+        }
     }//GEN-LAST:event_btnsigninActionPerformed
 
-/**
- * @param args the command line arguments
- */
-public static void main(String args[]) {
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -184,27 +186,23 @@ public static void main(String args[]) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
 
-}
+                }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login.class  
+            java.util.logging.Logger.getLogger(Login.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Login.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
-} catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login.class  
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Login.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
 
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
-} catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login.class  
-
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-
-} catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Login.class  
-
-.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Login.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
