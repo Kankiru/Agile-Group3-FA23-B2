@@ -223,7 +223,7 @@ public class Tinhnang extends javax.swing.JFrame {
     private void btnqlyhoadonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnqlyhoadonActionPerformed
         // TODO add your handling code here:
         this.toBack();
-        Hoadon newframe = new Hoadon();
+        invoice newframe = new invoice();
         newframe.setVisible(true);
         newframe.toFront();
     }//GEN-LAST:event_btnqlyhoadonActionPerformed
